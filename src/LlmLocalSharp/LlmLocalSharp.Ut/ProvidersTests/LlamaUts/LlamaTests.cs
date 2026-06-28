@@ -10,10 +10,7 @@ namespace LlmLocalSharp.Ut.ProvidersTests.LlamaUts;
 [DoNotParallelize]
 public class LlamaTests
 {
-    private const string LlamaModelFile = "llama-2-7b-chat.Q4_K_M.gguf";
-    private const string SmolLmModelFile = "SmolLM2-135M-Instruct-Q2_K.gguf";
-
-
+    private const string TestModelFile = "SmolLM2-135M-Instruct-Q2_K.gguf";
 
     [TestMethod]
     public async Task SendMessage_ReturnsNonEmptyResponse()
@@ -197,10 +194,10 @@ public class LlamaTests
     [TestMethod]
     public async Task SwitchModel_PreservesHistory()
     {
-        LlmLocalClientSettings llamasettings = this.GetSettings();
-        LlmLocalClientSettings smolsettings = this.GetSmolLmsettings();
+        LlmLocalClientSettings primarySettings = this.GetSettings();
+        LlmLocalClientSettings alternateSettings = this.GetAlternateSettings();
         using LlmLocalClient client = new LlmLocalClient();
-        using LlmSession session = client.CreateSession(llamasettings);
+        using LlmSession session = client.CreateSession(primarySettings);
 
         // Send a message on the first model
         LocalChatResponse firstResponse = await session.Chat.SendAsync("My name is Jorge.");
@@ -209,7 +206,7 @@ public class LlamaTests
         int historyCountBeforeSwitch = session.Chat.History.Messages.Count;
 
         // Switch to the second model
-        session.SwitchModel(smolsettings);
+        session.SwitchModel(alternateSettings);
 
         // History must be preserved after switching
         Assert.HasCount(historyCountBeforeSwitch, session.Chat.History.Messages,
@@ -304,26 +301,7 @@ public class LlamaTests
 
     private LlmLocalClientSettings GetSettings()
     {
-        string modelPath = TestModelResolver.GetModelPath(LlamaModelFile);
-
-        LlmLocalClientSettings settings = new LlmLocalClientSettings();
-
-        settings.Runtime.ModelPath = modelPath;
-        settings.Runtime.Backend = LlmBackend.Cpu;
-        settings.Runtime.ModelName = "llama-2-7b";
-        settings.Runtime.ContextSize = 2048;
-        settings.Runtime.GpuLayers = 0;
-
-        settings.Generation.Temperature = 0.7f;
-        settings.Generation.TopP = 0.9f;
-        settings.Generation.MaxTokens = 256;
-
-        return settings;
-    }
-
-    private LlmLocalClientSettings GetSmolLmsettings()
-    {
-        string modelPath = TestModelResolver.GetModelPath(SmolLmModelFile);
+        string modelPath = TestModelResolver.GetModelPath(TestModelFile);
 
         LlmLocalClientSettings settings = new LlmLocalClientSettings();
 
@@ -338,6 +316,13 @@ public class LlamaTests
         settings.Generation.TopP = 0.9f;
         settings.Generation.MaxTokens = 256;
 
+        return settings;
+    }
+
+    private LlmLocalClientSettings GetAlternateSettings()
+    {
+        LlmLocalClientSettings settings = this.GetSettings();
+        settings.Runtime.ModelName = "smollm2-135m-alternate";
         return settings;
     }
 
