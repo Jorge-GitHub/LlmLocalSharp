@@ -1,2 +1,2 @@
-# LlmSharp
-Avalon local LLM runtime.
+# LlmLocalSharp
+Local LLM runtime for .NET.

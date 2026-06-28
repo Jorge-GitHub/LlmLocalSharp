@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LlmLocalSharp.Ut/LlmLocalSharp.Ut.csproj" />
+  <Project Path="LlmLocalSharp/LlmLocalSharp.csproj" />
+</Solution>
