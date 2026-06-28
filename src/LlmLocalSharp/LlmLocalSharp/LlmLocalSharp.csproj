@@ -1,0 +1,280 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml-base.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml-cpu.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml-rpc.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\libomp140.aarch64.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\llama_gpu.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-base.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-alderlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-cannonlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-cascadelake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-cooperlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-haswell.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-icelake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-ivybridge.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-piledriver.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-sandybridge.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-sapphirerapids.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-skylakex.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-sse42.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-x64.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-zen4.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-rpc.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\libomp140.x86_64.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\llama.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-base.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-alderlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-cannonlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-cascadelake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-cooperlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-haswell.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-icelake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-ivybridge.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-piledriver.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-sandybridge.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-sapphirerapids.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-skylakex.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-sse42.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-x64.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-zen4.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cuda.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-rpc.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\libomp140.x86_64.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\llama_cuda.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-base.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-alderlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-cannonlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-cascadelake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-cooperlake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-haswell.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-icelake.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-ivybridge.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-piledriver.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-sandybridge.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-sapphirerapids.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-skylakex.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-sse42.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-x64.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-zen4.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-rpc.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-vulkan.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\libomp140.x86_64.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\llama_cuda.dll" />
+    <None Remove="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\mtmd.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml-base.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml-cpu.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml-rpc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\ggml.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\libomp140.aarch64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Arm64\Cpu\llama_gpu.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-base.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-alderlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-cannonlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-cascadelake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-cooperlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-haswell.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-icelake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-ivybridge.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-piledriver.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-sandybridge.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-sapphirerapids.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-skylakex.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-sse42.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-x64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-cpu-zen4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml-rpc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\ggml.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\libomp140.x86_64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cpu\llama.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-base.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-alderlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-cannonlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-cascadelake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-cooperlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-haswell.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-icelake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-ivybridge.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-piledriver.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-sandybridge.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-sapphirerapids.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-skylakex.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-sse42.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-x64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cpu-zen4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-cuda.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml-rpc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\ggml.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\libomp140.x86_64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Cuda\llama_cuda.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-base.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-alderlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-cannonlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-cascadelake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-cooperlake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-haswell.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-icelake.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-ivybridge.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-piledriver.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-sandybridge.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-sapphirerapids.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-skylakex.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-sse42.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-x64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-cpu-zen4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-rpc.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml-vulkan.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\ggml.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\libomp140.x86_64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\llama_cuda.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Engines\Providers\LlamaService\Libraries\Native\Win-x64\Vulkan\mtmd.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
